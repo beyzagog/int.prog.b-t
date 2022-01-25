@@ -1,0 +1,83 @@
+<!-- 
+<div class="nav mt-5 col-md-8 mx-auto">
+
+<div >
+    <div class="input-group">
+        <input type="text" placeholder="Tüm forumlarda ara" class="form-control">
+      </div>
+</div>
+<div class="col-md-4 mx-auto">
+    <a href="soru">
+    <button type="button" class="btn btn-primary">Soru Sor!</button>
+</a>
+</div>
+
+<div class="col-md-4 mx-auto">
+    <a href="uyeadmin">
+    <button type="button" class="btn btn-success">Üye/Admin Girişi</button>
+</a>
+</div>
+</div> -->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Menü</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Anasayfa</a>
+          </li>
+
+          <!-- Konular bölümü -->
+          <li class="nav-item dropdown" >
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Konular
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="güzellik">Güzellik Sırları</a></li>
+              <li><a class="dropdown-item" href="temizlik">Temizlik İpuçları</a></li>
+              <li><a class="dropdown-item" href="saç">Saç Boyama</a></li>
+              <li><a class="dropdown-item" href="spor">Spor</a></li>
+              <li><a class="dropdown-item" href="tatil">Tatil&Seyahat</a></li>
+              <li><a class="dropdown-item" href="moda">Moda%Stil</a></li>
+            </ul>
+          </li>
+
+          <!-- Soru sor -->
+          <!-- <div class="nav-item" class="ml-5">
+            <a href="soru">
+            <button type="button" class="btn btn-primary">Soru Sor!</button>
+        </a>
+        </div> -->
+
+
+        
+        </ul>
+      </div>
+        <!-- Üye Girişi -->
+        <div class="nav-item" class="mr-5">
+            <a href="uyeadmin">
+            <button type="button" class="btn btn-success">Üye/Admin Girişi</button>
+        </a>
+        </div>
+
+       <!-- Arama Yapma  -->
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Soru sor..." aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Ara</button>
+          </form>
+    </div>
+
+    
+  </nav>
+
+
+<router-outlet></router-outlet>
+
+
+
+

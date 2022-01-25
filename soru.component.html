@@ -1,0 +1,119 @@
+<!-- <div class="container mt-5 col-md-6  ">
+    <div class="jumbotron bg-dark text-white">
+        <h1 class="display-10 ">Soru Sorun</h1>
+    <label for="exampleFormControlInput1" class="form-label">E-Posta</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+
+    <label for="exampleFormControlTextarea1" class="form-label">Sorunuz</label>
+    <input type="text" class="form-control" placeholder="sorunuzu giriniz..." rows="3"
+    [(ngModel)]="inputText"
+     (keyup.enter)="addItem();"
+>
+  
+    <div class="mt-5">
+    <button type="button" 
+    [class]="getBtnClasses()"
+    class="btn" 
+    (click)="addItem();">Gönder</button>
+</div>
+</div> -->
+
+
+
+<div class="container mt-5 col-md-6">
+    <div class="jumbotron bg-dark text-white">
+        <h1 class="display-10 ">Soru Sorun</h1>
+    <form #kayitForm="ngForm" (ngSubmit)="Kaydet()">
+<div class="form-group">
+<label>Adı Soyadı</label>
+<input type="text" name="adsoyad" class="form-control" 
+#adsoyad ngModel [(ngModel)]="secKayit.adsoyad" required>
+<input type="hidden" name="id" class="form-control" 
+#id ngModel [(ngModel)]="secKayit.id" >
+</div>
+<div class="form-group">
+    <label>E-posta Adresi</label>
+    <input type="text" name="mail" class="form-control" 
+    #mail ngModel [(ngModel)]="secKayit.mail" required>
+    </div>
+<div class="form-group">
+        <label>Soru</label>
+        <input type="text" name="adsoyad" class="form-control" rows=3; 
+        #adsoyad ngModel [(ngModel)]="secKayit.adsoyad" required>
+    </div>
+    <input type="submit" value="Kaydet" class="btn btn-outline-success" [disabled]="kayitForm.invalid">
+    <button class="btn btn-outline-danger ml-3" (click)="Vazgec()" *ngIf="secKayit.id!=0">Vazgeç</button>
+<div class="mt-3" [ngClass]="sonuc.islem? 'alert alert-success':'alert alert-danger'" *ngIf="sonuc.mesaj?.length>0">{{sonuc.mesaj}}</div>
+</form>
+</div>
+
+
+
+<div class="container mt-5">
+    <div class="row">
+    <div class="col-md-8">
+        <h5>Sorular</h5>
+        <table class="table table-hover table-sm">
+            <thead>
+                <th>E-posta</th>
+                <th>Soru</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let kayit of kayitlar">
+                    <td>{{kayit.mail}}</td>
+                    <td>{{kayit.adsoyad}}</td>>
+                    <td><button class="btn btn-outline-warning" >Devamı</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+<!-- 
+<div class="form-check mb-3">
+    <input type="checkbox" [(ngModel)]="displayAll" class="form-check-input" name="" id="displayAll">
+    <label for="displayAll" class="form-check-label">Hepsini Göster</label>
+</div>
+
+<div class="my-2">
+    {{displayCount()}} görev tamamlandı.
+</div>
+
+<div class="alert alert-warning" *ngIf="getItems().length==0 else itemsTable">
+Tüm görevler tamamlandı. 
+</div>
+
+<ng-template #itemsTable>
+
+<table class="table table-bordered" >
+<thead>
+    <tr>
+        <th></th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let item of getItems(); let i =index;" [class]="{'bg-primary': item.action, 'bg-warning': !item.action}">
+        <td>{{i+1}}</td>
+        <td>{{item.description}}</td>
+
+        <div *ngIf="item.action; then yesTemplate else noTemplate">
+            Burası gösterilmez.
+        </div>
+        <ng-template #noTemplate>
+            No
+        </ng-template>
+        <ng-template #yesTemplate>
+            Yes
+        </ng-template>
+
+        </td>
+        <td>
+            <input type="checkbox" [(ngModel)]="item.action" name="" id="">
+        </td>
+
+    </tr>
+</tbody>
+</table>
+
+</ng-template> -->
